@@ -18,10 +18,11 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
             "type": "popup",
             "top": 5,
             "left": 5,
-            "width": screen.availWidth/2,
-            "height": screen.availHeight/2
+            "width": Math.round(screen.availWidth/2),
+            "height": Math.round(screen.availHeight/2)
         };              
-        chrome.windows.create(createData, function(){});        
+//        chrome.windows.create(createData, function(){});        
+        chrome.tabs.create({url:wikiUrl});
     }
 });
 
